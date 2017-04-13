@@ -7,7 +7,7 @@ mysql -uroot -e "UPDATE mysql.user SET Password=PASSWORD('test') WHERE User='roo
 mysql -uroot -e "FLUSH PRIVILEGES"
 mysql -uroot -ptest "openmrs" < /root/openmrs_dump.sql
 
-
+export CATALINA_OPTS="-Xms1024m -Xmx2048m -XX:MaxPermSize=1024m"
 /etc/init.d/tomcat7 start
 
 # The container will run as long as the script is running, that's why
